@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +12,8 @@ import { MapEditComponent } from './components/map/map-edit.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { ReactiveFormsModule } from '@angular/forms'
+
+import 'hammerjs';
 
 @NgModule({
   entryComponents:[
@@ -26,7 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms'
     BrowserAnimationsModule,
     MaterialModule,
     AgmCoreModule.forRoot({
-      apiKey: '...'
+      apiKey: environment.API_KEY
     }),
     ReactiveFormsModule
   ],

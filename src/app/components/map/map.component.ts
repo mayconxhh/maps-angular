@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Marker } from '../../class/marker.class';
-import { MatDialog, MatDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MapEditComponent } from './map-edit.component';
 
 @Component({
@@ -13,8 +13,8 @@ export class MapComponent implements OnInit {
 
 	markers: Marker[] = [];
 
-	lat: number = 51.678418;
-  lng: number = 7.809007;
+	lat: number = 51.673858;
+  lng: number = 7.815982;
 
   constructor( private snackBar: MatSnackBar,
   							public dialog: MatDialog ) {
@@ -29,6 +29,8 @@ export class MapComponent implements OnInit {
   }
 
   addMarker(ev){
+
+    console.log(ev)
 
   	const coords:{ lat:number, lng:number} = ev.coords;
   	const marker = new Marker(coords.lat, coords.lng);
